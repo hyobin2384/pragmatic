@@ -15,7 +15,7 @@ from subscribeapp.models import Subscription
 class SubscriptionView(RedirectView):
 
     def get_redirect_url(self, *args, **kwargs):
-        return reverse('projectapp:detail', kwargs={'pk':self.request.GET.get('project_pk')})
+        return reverse('projectApp:detail', kwargs={'pk':self.request.GET.get('project_pk')})
 
     def get(self, request, *args, **kwargs):
         project = get_object_or_404(Project, pk=self.request.GET.get('project_pk'))

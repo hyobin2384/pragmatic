@@ -18,15 +18,15 @@ from subscribeapp.models import Subscription
 class ProjectCreateView(CreateView):
     model=Project
     form_class = ProjectCreationForm
-    template_name = 'projectapp/create.html'
+    template_name = 'projectApp/create.html'
 
     def get_success_url(self):
-        return reverse('projectapp:detail', kwargs={'pk': self.object.pk})
+        return reverse('projectApp:detail', kwargs={'pk': self.object.pk})
 
 class ProjectDetailView(DetailView, MultipleObjectMixin):
     model=Project
     context_object_name = 'target_project'
-    template_name = 'projectapp/detail.html'
+    template_name = 'projectApp/detail.html'
 
     paginate_by = 25
 
@@ -48,5 +48,5 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
 class ProjectListView(ListView):
     model=Project
     context_object_name = 'project_list'
-    template_name = 'projectapp/list.html'
+    template_name = 'projectApp/list.html'
     paginate_by = 25
