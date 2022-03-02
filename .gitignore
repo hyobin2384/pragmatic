@@ -78,7 +78,7 @@ fabric.properties
 
 venv/
 
-pragmatic/.env
+.env
 
 db.sqlite3
 
